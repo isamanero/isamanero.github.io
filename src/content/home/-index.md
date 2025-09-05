@@ -1,6 +1,4 @@
 ---
-image: "@assets/Yo_home.jpg"
-imageAlt: Astrogon logo
 title: Isabel Mañero
 content: """¡Bienvenidos/as a mi portfolio!
 
