@@ -132,12 +132,18 @@ const baseUrl = "https://janedoe.com";
     <Tooltips interactive={false} delay={[333, 0]} />
   </head>
   <body>
+    <!-- Fondo día/noche limpio -->
     <Background />
+
     <Header />
+
     <main id="main-content" class="flex-1">
       <slot/>
     </main>
+
     <Footer />
+
+    <!-- ObserverScript opcional -->
     <!-- <ObserverScript /> -->
   </body>
 </html>
