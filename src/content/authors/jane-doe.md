@@ -1,11 +1,11 @@
 ---
-title: Jane Doe
-email: janedoe@email.com
+title: Isabel Mañero
+email: isaw911@gmail.com
 image: "@assets/profile/Yo_home.jpg"
 social:
-  github: "https://github.com/"
-  linkedIn: "https://www.linkedin.com/"
-  email: "janedoe@janedoe.com"
+  github: "https://github.com/isamanero/MyPortfolio"
+  linkedIn: "https://www.linkedin.com/in/isabel-ma%C3%B1ero-dominguez-222498160/"
+  email: "isaw911@gmail.com"
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+Mis redes
