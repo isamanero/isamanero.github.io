@@ -1,5 +1,6 @@
 ---
 title: Isabel Mañero
+image: "@assets/profile/Yo_home.jpg"
 content: |
   ¡Bienvenidos/as a mi portfolio!
 
