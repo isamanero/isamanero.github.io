@@ -8,8 +8,10 @@ button:
 draft: false
 ---
 
-Tengo curiosidad constante y una gran pasión por el aprendizaje. Cada pequeño logro o descubrimiento me motiva a seguir avanzando y a superarme día a día. Esa motivación me llevó a reinventarme y ampliar mis conocimientos, reforzando mi interés por los datos y la forma en que nos ayudan a comprender el mundo que nos rodea.
+No me canso de aprender, y creo que es algo que nunca dejamos de hacer, así que mejor disfrutarlo. Cada logro o descubrimiento me motiva a crecer y superarme, lo que me llevó a retomar la pasión por los números, la estadística y los datos, fortaleciendo mi profesionalidad.
 
-Soy organizada, tenaz, paciente y comunicativa, cualidades que me permiten enfrentar los desafíos con constancia y no rendirme ante las dificultades. Mi objetivo es aportar estas habilidades y esta pasión por el aprendizaje continuo a un equipo que valore la curiosidad, el análisis y la innovación.
+Saber comunicar los datos es fundamental, porque junto con el pensamiento crítico permiten interpretar realidades y generar soluciones eficientes.
+
+Enfrento los desafíos de forma organizada y tenaz, y mi objetivo es aportar a un equipo con mis habilidades y experiencia, destacando especialmente mis dos fortalezas: mi perfil técnico y profesional y mi lado más humano.
 
 
