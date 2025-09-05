@@ -22,7 +22,7 @@
   }
 
   html::before {
-    background-image: url(/backgrounds/fondo.png); /* Imagen de día */
+    background-image: url(/src/assets/backgrounds/fondo.png); /* Imagen de día */
     opacity: 1;
   }
 
@@ -31,7 +31,7 @@
   }
 
   html::after {
-    background-image: url(/backgrounds/dark.png); /* Imagen de noche */
+    background-image: url(/src/assets/backgrounds/dark.png); /* Imagen de noche */
     opacity: 0;
   }
 
@@ -54,26 +54,12 @@
 </style>
 </head>
 <body>
-  <button class="toggle-btn" id="theme-toggle">Modo Día/Noche</button>
+  <button class="toggle-btn" onclick="toggleDark()">Modo Día/Noche</button>
 
 <script>
-  const toggleBtn = document.getElementById('theme-toggle');
-
-  // Aplicar tema guardado o preferencia del sistema al cargar
-  if(localStorage.getItem('theme') === 'dark' || 
-     (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  }
-
-  // Cambiar tema al hacer clic
-  toggleBtn.addEventListener('click', () => {
+  function toggleDark() {
     document.documentElement.classList.toggle('dark');
-    if(document.documentElement.classList.contains('dark')){
-      localStorage.setItem('theme','dark');
-    } else {
-      localStorage.setItem('theme','light');
-    }
-  });
+  }
 </script>
 </body>
 </html>
