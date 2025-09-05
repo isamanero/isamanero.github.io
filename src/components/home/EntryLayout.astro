@@ -35,7 +35,7 @@ const { image, imageAlt, title, content, button } = entry.data;
           <!-- Recuadro translúcido -->
           <div class="bg-white/20 backdrop-blur-md rounded-lg p-8 mx-auto">
             <h1 set:html={markdownify(title)} class="mb-4" />
-            <p set:html={markdownify(content)} class="mb-6" />
+            <p set:html={markdownify(content.split("\n\n"))} class="mb-6" />
             {button && (
               <Button
                 label={button.label}
