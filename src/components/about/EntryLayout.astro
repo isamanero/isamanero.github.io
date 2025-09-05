@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, description, image, imageAlt } = entry.data;
+const { title, description, image, button, imageAlt } = entry.data;
 const { Content } = await render(entry);
 ---
 
@@ -38,3 +38,23 @@ const { Content } = await render(entry);
     </div>
   </section>
 </BaseLayout>
+
+{button && (
+              <div class="mt-6 text-center">
+                <Button
+                  label={button.label}
+                  link={button.link}
+                  newtab
+                  hoverInvert
+                  color=""
+                />
+              </div>
+            )}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
