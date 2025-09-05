@@ -1,5 +1,5 @@
 ---
-title: Deities
+title: Data Analytics
 description: A guide to the deities of the arcane, their domains, and blessings bestowed upon followers.
 image: "@assets/docs/the-arcane/deities/cover.jpg"
 imageAlt: Painting of an important looking woman 
