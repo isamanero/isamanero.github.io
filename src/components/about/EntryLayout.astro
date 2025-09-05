@@ -5,9 +5,6 @@ import { Image } from "astro:assets";
 import type { AboutEntry } from "@/types";
 import { render } from "astro:content";
 
-// Import del CV
-import cvFile from '@/assets/CV_Isabel_Mañero_Dominguez.pdf';
-
 interface Props {
   entry: AboutEntry;
 }
@@ -22,45 +19,42 @@ const { Content } = await render(entry);
     <div class="container">
       <div class="row justify-center">
         <div class="glass rounded-lg text-center p-8 md:col-10 lg:col-7 intersect:animate-fadeUp opacity-0 intersect-no-queue">
-          {image && (
-            <Image
-              class="mx-auto mb-6 rounded-lg w-64"
-              src={image}
-              alt={imageAlt}
-              width={1024}
-              height={1024}
-              loading="eager"
-            />
-          )}
-
-          <h2 set:html={markdownify(title)} class="h3 mb-6" />
-          <Content />
-
-          <!-- Botón de descarga de CV -->
-          <div class="mt-6 text-center">
-            <a
-              href={cvFile}
-              download
-              class="inline-block px-6 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-            >
-              Descargar CV
-            </a>
-          </div>
-
-          <!-- Botón dinámico si existe -->
-          {button && (
-            <div class="mt-4 text-center">
-              <Button
-                label={button.label}
-                link={button.link}
-                newtab
-                hoverInvert
-                color=""
+          {
+            image && (
+              <Image
+                class="mx-auto mb-6 rounded-lg w-64"
+                src={image}
+                alt={imageAlt}
+                width={1024}
+                height={1024}
+                loading="eager"
               />
-            </div>
-          )}
+            )
+          }
+          <h2 set:html={markdownify(title)} class="h3 mb-6" />
+            <Content />
         </div>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+{button && (
+              <div class="mt-6 text-center">
+                <Button
+                  label={button.label}
+                  link={button.link}
+                  newtab
+                  hoverInvert
+                  color=""
+                />
+              </div>
+            )}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
