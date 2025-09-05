@@ -1,15 +1,11 @@
 ---
 title: Isabel Mañero
-image: "@assets/profile/Yo_home.jpg"
+image: "@assets/profile/construction-worker.gif"
 content: |
-  ¡Bienvenidos/as a mi portfolio!
-
-  Me alegra que estés aquí. Este espacio es una ventana a mi trabajo, mis proyectos y mi pasión por los datos 💻📊, el océano 🌊 y el medio ambiente 🌱. Cada proyecto refleja mi compromiso con la creatividad, la innovación y la excelencia.
-
-  Explora mi trabajo, conoce mi proceso y descubre cómo puedo aportar valor a tus ideas. Si algo te inspira o quieres conversar sobre posibles colaboraciones, no dudes en contactarme ✉️
-
-  ¡Gracias por tu visita y disfruta del recorrido!
+  TODAVÍA EN CONSTRUCCIÓN 🛠️, Aunque el tema por defecto te ofrece recetas
+  en la parte superior por si te interesa, o aún más interesante mi portfolio
+  en Github 💻
 button:
-  label: ¡Sobre mí!
-  link: https://isamanero.github.io/about/
+  label: Mi portfolio en GitHub
+  link: https://github.com/isamanero/MyPortfolio
 ---
