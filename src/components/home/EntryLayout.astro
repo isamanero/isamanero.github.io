@@ -19,10 +19,11 @@ const { image, imageAlt, title, content, button } = entry.data;
     <div class="container">
       <div class="row justify-center">
         <div class="text-center lg:col-6">
+
           {image && (
-            <div class="blur-[0px]">
+            <div class="blur-[0px] mb-6">
               <Image
-                class="mb-6 w-64"
+                class="mx-auto w-64 rounded-lg"
                 src={image}
                 alt={imageAlt}
                 width={1024}
@@ -33,19 +34,26 @@ const { image, imageAlt, title, content, button } = entry.data;
           )}
 
           <!-- Recuadro translúcido -->
-          <div class="bg-white/20 backdrop-blur-md rounded-lg p-8 mx-auto">
-            <h1 set:html={markdownify(title)} class="mb-4" />
-            <p set:html={markdownify(content.split("\n\n"))} class="mb-6" />
+          <div class="bg-white/20 backdrop-blur-md rounded-lg p-8 mx-auto text-left">
+            <h1 set:html={markdownify(title)} class="mb-6 text-center" />
+
+            {content.split("\n\n").map((parrafo) => (
+              <p class="mb-4">{parrafo}</p>
+            ))}
+
             {button && (
-              <Button
-                label={button.label}
-                link={button.link}
-                newtab
-                hoverInvert
-                color=""
-              />
+              <div class="mt-6 text-center">
+                <Button
+                  label={button.label}
+                  link={button.link}
+                  newtab
+                  hoverInvert
+                  color=""
+                />
+              </div>
             )}
           </div>
+
         </div>
       </div>
     </div>
