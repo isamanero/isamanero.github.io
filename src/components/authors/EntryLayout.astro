@@ -14,7 +14,7 @@ interface Props {
 const { entry, recentBlogEntries } = Astro.props;
 const { title, social, description, image, imageAlt } = entry.data;
 
-const { Content } = await render(entry);
+const { Content } = await entry.render();
 ---
 
 <BaseLayout title={title} description={description} image={image?.src}>
