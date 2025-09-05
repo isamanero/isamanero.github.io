@@ -157,7 +157,6 @@ export const collections = {
   blog,
   docs,
   home,
-  indexCards,
   poetry,
   portfolio,
   recipes,
