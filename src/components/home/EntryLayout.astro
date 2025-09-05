@@ -14,46 +14,45 @@ const { image, imageAlt, title, content, button } = entry.data;
 ---
 
 <BaseLayout>
-  <section class="section">
-    <div class="container">
-      <div class="row justify-center">
-        <div class="text-center lg:col-6">
+  <section class="section min-h-screen flex items-center">
+    <div class="container mx-auto">
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
 
-          {image && (
-            <div class="blur-[0px] mb-6">
-              <Image
-                class="mx-auto w-64 rounded-lg"
-                src={image}
-                alt={imageAlt}
-                width={1024}
-                height={1024}
-                loading="eager"
+        <!-- Imagen a la izquierda -->
+        {image && (
+          <div class="flex-shrink-0">
+            <Image
+              class="rounded-lg w-64 lg:w-96"
+              src={image}
+              alt={imageAlt}
+              width={1024}
+              height={1024}
+              loading="eager"
+            />
+          </div>
+        )}
+
+        <!-- Texto a la derecha con fondo translúcido -->
+        <div class="backdrop-blur-md rounded-lg p-8 text-left max-w-lg" style="background-color: rgba(255,255,255,0.2);">
+          <h1 set:html={markdownify(title)} class="mb-6 text-center lg:text-left" />
+
+          {content.split("\n\n").map((parrafo) => (
+            <p class="mb-4">{parrafo}</p>
+          ))}
+
+          {button && (
+            <div class="mt-6 text-center lg:text-left">
+              <Button
+                label={button.label}
+                link={button.link}
+                newtab
+                hoverInvert
+                color=""
               />
             </div>
           )}
-
-          <!-- Solo la tarjeta tiene fondo translúcido -->
-          <div class="backdrop-blur-md rounded-lg p-8 mx-auto text-left" style="background-color: rgba(255,255,255,0.2);">
-            <h1 set:html={markdownify(title)} class="mb-6 text-center" />
-
-            {content.split("\n\n").map((parrafo) => (
-              <p class="mb-4">{parrafo}</p>
-            ))}
-
-            {button && (
-              <div class="mt-6 text-center">
-                <Button
-                  label={button.label}
-                  link={button.link}
-                  newtab
-                  hoverInvert
-                  color=""
-                />
-              </div>
-            )}
-          </div>
-
         </div>
+
       </div>
     </div>
   </section>
