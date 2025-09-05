@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Proyectos
 description: This is the docs
 draft: false
 ---
