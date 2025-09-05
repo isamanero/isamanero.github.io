@@ -1,5 +1,5 @@
 ---
-title: Classes
+title: GIS
 description: "A guide to the core classes of the realms and the diverse paths they offer for character growth."
 image: "@assets/docs/characters/classes/cover.jpg"
 imageAlt: "A painting of an Elvish Rogue in a tree"
