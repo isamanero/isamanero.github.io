@@ -1,4 +1,6 @@
 ---
+title: "__________"
+email: "__________"
 image: "@assets/tarjeta.png"
 social:
   github: "https://github.com/isamanero/MyPortfolio"
