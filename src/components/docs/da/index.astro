@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import Card from "@components/docs/Card.astro";
+import type { DocsEntry } from "@/types";
+
+// Cargar todos los proyectos DA desde content
+const projectModules = import.meta.glob('/content/projects/academicos/da/*.md', { eager: true });
+const entries: DocsEntry[] = Object.values(projectModules).map((m: any) => m.default);
+---
+
+<BaseLayout title="Proyectos DA" description="Proyectos académicos de DA">
+  <section class="section">
+    <div class="container">
+      <div class="flex flex-wrap justify-center -m-2">
+        {entries.map((entry) => (
+          <div class="h-min p-2 md:w-1/2 lg:w-1/3">
+            <Card entry={entry} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
