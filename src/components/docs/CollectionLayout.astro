@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@components/base/BaseLayout.astro";
 import DocCard from "@components/docs/Card.astro";
-import PageHeader from "@components/common/PageHeader.astro";
 import type { DocsEntry } from "@/types";
 
 interface Props {
@@ -9,16 +8,10 @@ interface Props {
   entries: DocsEntry[];
 }
 
-const { collectionIndex, entries } = Astro.props;
+const { entries } = Astro.props;
 ---
 
-<BaseLayout
-  title={collectionIndex.data.title}
-  image={collectionIndex.data.image?.src}
-  description={collectionIndex.data.description}
->
-  <PageHeader title={collectionIndex.data.title} />
-  
+<BaseLayout>
   <section class="section">
     <div class="container">
       <!-- Contenedor flex centrado -->
