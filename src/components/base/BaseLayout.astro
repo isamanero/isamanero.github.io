@@ -18,7 +18,7 @@ const { title, description, image, noindex, canonical } = Astro.props;
 
 const siteTitle = "Isabel Mañero";
 const siteDescription = "Astrogon is a simple and elegant Astro theme.";
-const siteImage = "assets/las-olas-del-mar.png";
+const siteImage = "/assets/las-olas-del-mar.png";
 const siteAuthor = "Isabel Mañero (dev Reednel (Astrogon))";
 const baseUrl = "";
 ---
@@ -87,8 +87,9 @@ const baseUrl = "";
         transition: opacity 0.5s ease-in-out;
       }
 
+      /* Día */
       html::before {
-        background-image: url(/src/assets/backgrounds/fondo.png);
+        background-image: url(/assets/backgrounds/fondo.png);
         opacity: 1;
       }
 
@@ -96,8 +97,9 @@ const baseUrl = "";
         opacity: 0;
       }
 
+      /* Noche */
       html::after {
-        background-image: url(/src/assets/backgrounds/dark.png);
+        background-image: url(/assets/backgrounds/dark.png);
         opacity: 0;
       }
 
