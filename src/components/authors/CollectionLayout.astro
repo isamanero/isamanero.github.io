@@ -12,8 +12,7 @@ interface Props {
 const { authorIndex, entries } = Astro.props;
 ---
 
-<BaseLayout title={authorIndex.data.title} description={authorIndex.data.description}>
-  <PageHeader title={authorIndex.data.title} />
+<BaseLayout>
   <section class="section-sm pb-0">
     <div class="container">
       <div class="row justify-center">
