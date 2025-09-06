@@ -1,11 +1,8 @@
 ---
 import { plainify } from "@lib/textConverter";
-import Footer from "@components/base/Footer.astro";
 import Header from "@components/base/Header.astro";
-import ObserverScript from "@components/base/ObserverScript.astro";
 import "@/styles/main.scss";
 import { ClientRouter } from "astro:transitions";
-import Background from "@/components/base/Background.astro";
 import { Tooltips } from "astro-tooltips";
 
 // types for frontmatters
@@ -27,124 +24,115 @@ const baseUrl = "";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon/las-olas-del-mar.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon/las-olas-del-mar.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon/las-olas-del-mar.png"
-    />
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/las-olas-del-mar.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/las-olas-del-mar.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/las-olas-del-mar.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta name="theme-name" content="pages" />
     <meta name="msapplication-TileColor" content="#000000" />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#fff"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#000"
-    />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
     <meta name="generator" content={Astro.generator} />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=5"
-    />
-
-    <title>
-      {plainify(title ? title : siteTitle)}
-    </title>
-
+    <title>{plainify(title ? title : siteTitle)}</title>
     {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
     {noindex && <meta name="robots" content="noindex,nofollow" />}
 
-    <meta
-      name="description"
-      content={plainify(description ? description : siteDescription)}
-    />
+    <meta name="description" content={plainify(description ? description : siteDescription)} />
     <meta name="author" content={siteAuthor} />
     <meta property="og:title" content={plainify(title ? title : siteTitle)} />
-    <meta
-      property="og:description"
-      content={plainify(description ? description : siteDescription)}
-    />
+    <meta property="og:description" content={plainify(description ? description : siteDescription)} />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content={`${baseUrl}/${Astro.url.pathname.replace("/", "")}`}
-    />
-    <meta
-      property="og:image"
-      content={`${baseUrl}${image ? image : siteImage}`}
-    />
+    <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace("/", "")}`} />
+    <meta property="og:image" content={`${baseUrl}${image ? image : siteImage}`} />
 
     <meta name="twitter:title" content={plainify(title ? title : siteTitle)} />
-    <meta
-      name="twitter:description"
-      content={plainify(description ? description : siteDescription)}
-    />
-    <meta
-      name="twitter:image"
-      content={`${baseUrl}${image ? image : siteImage}`}
-    />
+    <meta name="twitter:description" content={plainify(description ? description : siteDescription)} />
+    <meta name="twitter:image" content={`${baseUrl}${image ? image : siteImage}`} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Katex -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
-      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
-      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
-      crossorigin="anonymous"></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
       integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
-      crossorigin="anonymous"
-      onload="renderMathInElement(document.body);"></script>
-      
-    <!-- https://docs.astro.build/en/guides/view-transitions -->
+      crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+    <!-- Transitions y tooltips -->
     <ClientRouter fallback="swap" />
     <Tooltips interactive={false} delay={[333, 0]} />
+
+    <!-- Fondo día/noche -->
+    <style>
+      html::before,
+      html::after {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        pointer-events: none;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      html::before {
+        background-image: url(/src/assets/backgrounds/fondo.png);
+        opacity: 1;
+      }
+
+      html.dark::before {
+        opacity: 0;
+      }
+
+      html::after {
+        background-image: url(/src/assets/backgrounds/dark.png);
+        opacity: 0;
+      }
+
+      html.dark::after {
+        opacity: 1;
+      }
+    </style>
   </head>
-<body>
-  <!-- Fondo día/noche limpio -->
-  <Background />
 
-  <Header />
+  <body>
+    <!-- Header -->
+    <Header />
 
-  <main id="main-content" class="flex-1">
-    <slot/>
-  </main>
+    <!-- Contenido principal -->
+    <main id="main-content" class="flex-1 pb-20">
+      <slot/>
+    </main>
 
-  <!-- Script para modo oscuro inicial -->
-  <script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-</body>
+    <!-- Script para modo oscuro inicial y cambios en tiempo real -->
+    <script>
+      const root = document.documentElement;
+
+      // Aplica modo oscuro según preferencia del usuario
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.classList.add('dark');
+      }
+
+      // Escucha cambios de preferencia del sistema
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (e.matches) {
+          root.classList.add('dark');
+        } else {
+          root.classList.remove('dark');
+        }
+      });
+    </script>
+  </body>
+</html>
