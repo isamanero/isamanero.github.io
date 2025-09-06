@@ -131,12 +131,20 @@ const baseUrl = "";
     <ClientRouter fallback="swap" />
     <Tooltips interactive={false} delay={[333, 0]} />
   </head>
-  <body>
-    <!-- Fondo día/noche limpio -->
-    <Background />
+<body>
+  <!-- Fondo día/noche limpio -->
+  <Background />
 
-    <Header />
+  <Header />
 
-    <main id="main-content" class="flex-1">
-      <slot/>
-    </main>
+  <main id="main-content" class="flex-1">
+    <slot/>
+  </main>
+
+  <!-- Script para modo oscuro inicial -->
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</body>
