@@ -12,12 +12,12 @@ interface Props {
 }
 
 const { entry, recentBlogEntries } = Astro.props;
-const { social, description, image, imageAlt } = entry.data;
+const { title, social, description, image, imageAlt } = entry.data;
 
 const { Content } = await render(entry);
 ---
 
-<BaseLayout description={description} image={image?.src}>
+<BaseLayout title={title} description={description} image={image?.src}>
   <section class="section-sm pb-0">
     <div class="container">
       <div
@@ -36,19 +36,15 @@ const { Content } = await render(entry);
               loading="eager"
             />
           )}
-
-          {description && <h1 class="h3 mb-6">{description}</h1>}
-
+          <h1 class="h3 mb-6">{title}</h1>
           <div class="mb-6">
             <Content />
           </div>
           
           <!-- Redes sociales centradas -->
-          {social && (
-            <div class="flex justify-center mb-6">
-              <Social links={social} />
-            </div>
-          )}
+          <div class="flex justify-center mb-6">
+            <Social links={social} />
+          </div>
         </div>
       </div>
 
