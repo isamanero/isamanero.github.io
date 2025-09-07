@@ -1,9 +1,8 @@
 ---
-title: Proyecto 1
+title: Juegos clásicos con Python
 description: "A collection of backgrounds that shape a character’s skills, motivations, and story before becoming an adventurer."
-image: "@assets/docs/characters/backgrounds/Data_PA.png"
-imageAlt: "Painting of a hooded figure with light beaming out from his chest"
-pubDate: 2024-07-15
-modDate: 2024-08-03
+image: "@assets/docs/characters/backgrounds/juegos.png"
+imageAlt: "Portada creda con IA"
+pubDate: 2025-02
+modDate: 2025-08
 ---
-
