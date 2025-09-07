@@ -1,5 +1,5 @@
 ---
 title: Proyectos
-description: This is the docs
+description: Esta es la sección de proyectos
 draft: false
 ---
