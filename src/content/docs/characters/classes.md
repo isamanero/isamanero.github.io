@@ -1,8 +1,8 @@
 ---
 title: Proyecto 2
-description: "A guide to the core classes of the realms and the diverse paths they offer for character growth."
-image: "@assets/docs/characters/classes/cover.jpg"
-imageAlt: "A painting of an Elvish Rogue in a tree"
-pubDate: 2024-03-10
-modDate: 2024-05-18
+description: "A collection of backgrounds that shape a character’s skills, motivations, and story before becoming an adventurer."
+image: "@assets/docs/characters/backgrounds/juegos.png"
+imageAlt: "Painting of a hooded figure with light beaming out from his chest"
+pubDate: 2024-07-15
+modDate: 2024-08-03
 ---
