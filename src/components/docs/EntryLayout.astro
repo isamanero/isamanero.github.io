@@ -41,7 +41,10 @@ const { title, image, imageAlt, description } = entry.data;
     <!-- Recuadro traslúcido con descripción -->
     {description && (
       <div class="bg-white/20 backdrop-blur-md rounded-lg p-4 mt-2">
-        <div class="prose prose-sm text-gray-900 dark:text-gray-100" set:html={description}></div>
+        <div 
+          class="prose prose-sm text-gray-900 dark:text-gray-100"
+          set:html={description}
+        ></div>
       </div>
     )}
   </main>
