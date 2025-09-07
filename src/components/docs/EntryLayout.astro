@@ -7,45 +7,27 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, image, imageAlt, description } = entry.data;
+const { title, image, imageAlt } = entry.data;
 ---
 
-<div class="flex flex-col lg:flex-row gap-4 m-4">
-  <!-- Panel izquierdo de acceso rápido -->
-  <aside class="lg:w-1/4 bg-gray-100 dark:bg-gray-800 rounded-lg p-4 sticky top-4 h-fit">
-    <h3 class="font-bold mb-2">Acceso rápido</h3>
-    <ul class="space-y-1 text-sm">
-      <li><a href="#seccion1" class="text-blue-500 hover:underline">Sección 1</a></li>
-      <li><a href="#seccion2" class="text-blue-500 hover:underline">Sección 2</a></li>
-      <li><a href="#seccion3" class="text-blue-500 hover:underline">Sección 3</a></li>
-    </ul>
-  </aside>
-
-  <!-- Contenido principal -->
-  <main class="flex-1 flex flex-col gap-4">
-    <!-- Foto principal -->
-    {image && (
-      <Image
-        src={image}
-        alt={imageAlt}
-        width={1280}
-        height={720}
-        class="rounded-lg object-cover w-full h-auto"
-        loading="eager"
-      />
-    )}
-
-    <!-- Título del proyecto -->
-    <h1 class="text-2xl font-bold mt-2">{title}</h1>
-
-    <!-- Recuadro traslúcido con descripción -->
-    {description && (
-      <div class="bg-white/20 backdrop-blur-md rounded-lg p-4 mt-2">
-        <div 
-          class="prose prose-sm text-gray-900 dark:text-gray-100"
-          set:html={description}
-        ></div>
+<div class="h-full m-2 bg-gradient-to-br gradient rounded-lg intersect:animate-fadeUp opacity-0 flex justify-center">
+  <div class="glass h-full rounded-lg w-full text-center">
+    <a class="group inline-block w-full hover:opacity-100" href={`/docs/${entry.id.replace("/-index", "")}`}>
+      <div class="relative rounded-lg pb-9/16 overflow-hidden">
+        {image && (
+          <Image
+            class="absolute object-cover w-full h-full group-hover:scale-[105%] transition-all duration-300"
+            src={image}
+            alt={imageAlt}
+            width={1280}
+            height={720}
+            loading="eager"
+          />
+        )}
+        <div class="glass-t absolute text-center rounded-lg px-2 py-1 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+          <h4 class="mx-auto">{title}</h4>
+        </div>
       </div>
-    )}
-  </main>
+    </a>
+  </div>
 </div>
