@@ -15,12 +15,12 @@ const { entry, browserMenu } = Astro.props;
 const { Content, headings } = await render(entry);
 const { title, description, hideNav, hideToc, image } = entry.data;
 
-const globalHideNav = false;
-const globalHideToc = false;
-const tocDepth = 3;
+const globalHideNav = false; // set true to always hide the nav bar (left side menu)
+const globalHideToc = false; // set true to always hide the table of contents (right side menu)
+const tocDepth = 3; // maximum depth for the table of contents 1 = h1, etc
 
 const actuallyHideNav = hideNav || globalHideNav;
-const actuallyHideToc = hideToc || globalHideToc || headings.filter(h => h.depth <= tocDepth).length === 0;
+const actuallyHideToc = hideToc || globalHideToc || headings.filter((heading) => heading.depth <= tocDepth).length === 0;
 
 let articleClass = "";
 let navClass = "";
@@ -47,7 +47,7 @@ if (actuallyHideNav && actuallyHideToc) {
 
 <BaseLayout title={title} image={image?.src} description={description}>
   <section class="flex container p-4">
-    
+
     <!-- Navegación lateral izquierda -->
     <div class={`max-h-static_sidemenu sticky top-[5rem] mr-4 ${navClass}`}>
       <DocBrowser
@@ -60,7 +60,6 @@ if (actuallyHideNav && actuallyHideToc) {
     <div class={`w-full ${articleClass}`}>
       <article>
         <section>
-          <!-- Header: Título + Fecha -->
           <EntryHeader entry={entry} showImage showPubDate />
 
           <!-- Descripción del MD -->
@@ -71,7 +70,6 @@ if (actuallyHideNav && actuallyHideToc) {
           )}
         </section>
 
-        <!-- Contenido del MD -->
         <section class="content mb-4 glass px-4 rounded-lg">
           <Content />
         </section>
