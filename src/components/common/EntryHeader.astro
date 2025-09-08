@@ -1,121 +1,77 @@
 ---
-import { markdownify, slugify, upperHumanize, lowerHumanize } from "@lib/textConverter";
-import { Image } from "astro:assets";
-import {
-  FaRegUserCircle,
-  FaRegFolder,
-  FaHashtag,
-  FaRegClock,
-} from "react-icons/fa";
-import type { GenericEntry, EntryReference } from "@/types";
-
-interface EntryData {
-  title: string;
-  description?: string;
-  image?: string;
-  imageAlt?: string;
-  author?: EntryReference;
-  categories?: string[];
-  tags?: string[];
-  complexity?: number;
-}
+import BaseLayout from "@components/base/BaseLayout.astro";
+import type { DocsEntry, MenuItem } from "@/types";
+import DocBrowser from "@components/docs/Browser.astro";
+import TableOfContents from "@components/common/TableOfContents.astro";
+import { render } from "astro:content";
+import EntryHeader from "@components/common/EntryHeader.astro";
+import { markdownify } from "@lib/textConverter";
 
 interface Props {
-  entry: GenericEntry;
-  showInfo?: boolean;
-  showImage?: boolean;
-  showAuthor?: boolean;
-  showReadingTime?: boolean;
-  showCategories?: boolean;
-  showTags?: boolean;
+  entry: DocsEntry;
+  browserMenu: MenuItem[];
 }
 
-const {
-  entry,
-  showInfo = true,
-  showImage = false,
-  showAuthor = false,
-  showReadingTime = false,
-  showCategories = false,
-  showTags = false,
-}: Props = Astro.props;
+const { entry, browserMenu } = Astro.props;
+const { Content, headings } = await render(entry);
+const { title, description, hideNav, hideToc, image } = entry.data;
 
-const {
-  title,
-  description,
-  author,
-  categories,
-  tags,
-  image,
-  imageAlt,
-  complexity,
-} = entry.data as EntryData;
+const globalHideNav = false;
+const globalHideToc = false;
+const tocDepth = 3;
 
-categories?.sort((a: string, b: string) => a.localeCompare(b));
-tags?.sort((a: string, b: string) => a.localeCompare(b));
+const actuallyHideNav = hideNav || globalHideNav;
+const actuallyHideToc =
+  hideToc ||
+  globalHideToc ||
+  headings.filter((heading) => heading.depth <= tocDepth).length === 0;
+
+let articleClass = "";
+let navClass = "";
+let tocClass = "";
+
+if (actuallyHideNav && actuallyHideToc) {
+  navClass = "hidden";
+  articleClass = "w-full";
+  tocClass = "hidden";
+} else if (!actuallyHideNav && actuallyHideToc) {
+  navClass = "hidden md:flex md:w-1/4 lg:w-1/5";
+  articleClass = "w-full md:w-3/4 lg:w-4/5";
+  tocClass = "hidden";
+} else if (actuallyHideNav && !actuallyHideToc) {
+  navClass = "hidden";
+  articleClass = "w-full md:w-3/4 lg:w-4/5";
+  tocClass = "hidden md:flex md:w-1/4 lg:w-1/5";
+} else {
+  navClass = "hidden md:flex md:w-1/4 lg:w-1/5";
+  articleClass = "w-full md:w-3/4 lg:w-3/5";
+  tocClass = "hidden lg:flex lg:w-1/5";
+}
 ---
 
-<div class="mt-2">
-  {image && showImage && (
-    <div class="mb-8 glass rounded-lg intersect:animate-fadeDown opacity-0 intersect-no-queue">
-      <Image
-        class="w-full rounded-lg"
-        src={image}
-        alt={imageAlt || ""}
-        height={500}
-        width={1200}
-        loading="eager"
+<BaseLayout title={title} image={image?.src} description={description}>
+  <section class="flex container p-4">
+    <div class={`max-h-static_sidemenu sticky top-[5rem] mr-4 ${navClass}`}>
+      <DocBrowser
+        menu={browserMenu}
+        currentPage={entry.id.replace("/-index", "")}
       />
     </div>
-  )}
 
-  {showInfo && (
-    <div class="glass mb-8 p-6 rounded-lg intersect:animate-fade opacity-0 intersect-no-queue flex flex-col items-center text-center">
-      
-      <!-- Título centrado -->
-      <h1 set:html={markdownify(title)} class="text-3xl font-bold mb-4" />
-      
-      <!-- Descripción centrada -->
-      {description && (
-        <div set:html={markdownify(description)} class="text-lg text-gray-700 mb-4" />
-      )}
+    <div class={`w-full ${articleClass}`}>
+      <article>
+        <!-- EntryHeader maneja Título + Descripción centrada -->
+        <EntryHeader entry={entry} showImage />
 
-      <!-- Autor, categorías y tags centrados -->
-      <ul class="flex flex-wrap justify-center gap-2">
-        {author && showAuthor && (
-          <li class="inline-block">
-            <a href={`/authors/${slugify(author.id)}`} class="flex items-center gap-1">
-              <FaRegUserCircle class="inline-block" />
-              {upperHumanize(author.id)}
-            </a>
-          </li>
-        )}
-
-        {complexity && showReadingTime && (
-          <li class="inline-block flex items-center gap-1">
-            <FaRegClock class="inline-block" />
-            {complexity} min
-          </li>
-        )}
-
-        {categories && showCategories && categories.map((cat) => (
-          <li class="inline-block flex items-center gap-1">
-            <a href={`/blog/categories/${slugify(cat)}`}>
-              <FaRegFolder class="inline-block" />
-              {upperHumanize(cat)}
-            </a>
-          </li>
-        ))}
-
-        {tags && showTags && tags.map((tag) => (
-          <li class="inline-block flex items-center gap-1">
-            <a href={`/blog/tags/${slugify(tag)}`}>
-              <FaHashtag class="inline-block" />
-              {lowerHumanize(tag)}
-            </a>
-          </li>
-        ))}
-      </ul>
+        <!-- Contenido principal -->
+        <section class="content mb-4 glass px-4 rounded-lg">
+          <Content />
+        </section>
+      </article>
     </div>
-  )}
-</div>
+
+    <div class={`max-h-static_sidemenu sticky top-[5rem] ml-4 ${tocClass}`}>
+      <TableOfContents headings={headings} tocDepth={tocDepth} />
+    </div>
+  </section>
+</BaseLayout>
