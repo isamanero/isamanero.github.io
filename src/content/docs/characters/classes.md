@@ -8,6 +8,4 @@ description: |
   Entre los próximos pasos destacan mejorar la clasificación por géneros, incluir datos demográficos y diseñar rutinas musicales para el bienestar.
 image: "@assets/docs/characters/backgrounds/covid.png"
 imageAlt: "Evolución de la música durante la pandemia 2020"
-pubDate: 2024-07-15
-modDate: 2024-08-03
 ---
