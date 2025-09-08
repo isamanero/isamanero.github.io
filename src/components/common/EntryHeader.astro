@@ -78,7 +78,7 @@ tags?.sort((a: string, b: string) => a.localeCompare(b));
 
     <!-- Descripción con soporte dark mode -->
     {description && (
-      <p 
+      <div 
         class="text-lg mb-6 text-gray-700 dark:text-gray-300"
         set:html={markdownify(description)}
       />
