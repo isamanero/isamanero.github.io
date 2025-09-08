@@ -1,5 +1,5 @@
 ---
-title: Banana Bread
+title: Banana Bread mochi
 description: A moist, flavorful banana bread made with overripe bananas, perfect for breakfast or a snack.
 image: "@assets/recipes/banana-bread.jpg"
 author: jane-doe
