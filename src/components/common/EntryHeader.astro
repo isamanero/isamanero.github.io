@@ -71,18 +71,18 @@ tags?.sort((a: string, b: string) => a.localeCompare(b));
 </div>
 
 {showInfo && (
-  <div class="glass mb-8 p-6 rounded-lg intersect:animate-fade opacity-0 intersect-no-queue flex flex-col items-center text-center">
+  <div class="glass mb-8 p-6 rounded-lg intersect:animate-fade opacity-0 intersect-no-queue flex flex-col items-center">
     
- <!-- Título centrado -->
-<h1 set:html={markdownify(title)} class="text-3xl font-bold mb-4 text-center" />
+    <!-- Título centrado -->
+    <h1 set:html={markdownify(title)} class="text-3xl font-bold mb-4 text-center" />
 
-<!-- Descripción alineada a la izquierda -->
-{description && (
-  <div 
-    class="prose prose-lg prose-gray dark:prose-invert mb-6 text-left max-w-none"
-    set:html={markdownify(description)}
-  />
-)}
+    <!-- Descripción alineada a la izquierda -->
+    {description && (
+      <div 
+        class="prose prose-lg prose-gray dark:prose-invert mb-6 text-left max-w-none"
+        set:html={markdownify(description)}
+      />
+    )}
 
     <!-- Autor, categorías y tags centrados -->
     <ul class="flex flex-wrap justify-center gap-2">
