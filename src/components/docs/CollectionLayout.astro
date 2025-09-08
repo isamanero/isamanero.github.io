@@ -14,10 +14,10 @@ const { entries } = Astro.props;
 <BaseLayout>
   <section class="section">
     <div class="container">
-      <!-- Contenedor flex centrado -->
-      <div class="flex flex-wrap justify-center -m-2">
+      <!-- Carrusel con scroll -->
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide">
         {entries.map((entry) => (
-          <div class="h-min p-2 md:w-1/2 lg:w-1/3">
+          <div class="min-w-[80%] sm:min-w-[50%] md:min-w-[33%] lg:min-w-[25%] snap-center">
             <DocCard entry={entry} />
           </div>
         ))}
