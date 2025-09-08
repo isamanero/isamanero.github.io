@@ -12,7 +12,7 @@ import type { GenericEntry, EntryReference } from "@/types";
 interface EntryData {
   title: string;
   description?: string;
-  image?: string;
+  image?: any;
   imageAlt?: string;
   author?: EntryReference;
   categories?: string[];
@@ -58,14 +58,17 @@ tags?.sort((a: string, b: string) => a.localeCompare(b));
 <div class="mt-2">
   {image && showImage && (
     <div class="mb-8 glass rounded-lg intersect:animate-fadeDown opacity-0 intersect-no-queue">
-      <Image
-        class="w-1/2 mx-auto rounded-lg"
-        src={image}
-        alt={imageAlt || ""}
-        height={250}
-        width={600}
-        loading="eager"
-      />
+      <!-- Imagen clicable para ampliar -->
+      <a href={image?.src} target="_blank" rel="noopener noreferrer">
+        <Image
+          class="mx-auto w-full max-w-[600px] h-auto rounded-lg object-cover cursor-pointer"
+          src={image}
+          alt={imageAlt || ""}
+          width={1200}
+          height={500}
+          loading="eager"
+        />
+      </a>
     </div>
   )}
 </div>
