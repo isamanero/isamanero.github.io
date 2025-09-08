@@ -1,12 +1,14 @@
 ---
 title: "Primer proyecto curso GIS"
 description: |
-  En este ejercicio se trabajó con las capas del proyecto, centrándose en "itinerarios.shp".
-  El objetivo fue categorizar los itinerarios según el desnivel.
-  El campo de desnivel se transformó para obtener valores numéricos que permitieran establecer rangos.
-  Se definieron tres categorías de desnivel: bajo, medio y alto, considerando valores atípicos.
-  Como resultado, se generó un conjunto de subcapas con su simbología correspondiente.
-  Finalmente, se elaboró un mapa con leyenda, incluyendo núcleos urbanos y límites municipales, como parte del Módulo 1 del curso de Especialista en QGIS.
+  🗺️ Análisis de itinerarios según desnivel  
+  Este proyecto se centró en la capa "itinerarios.shp", transformando los valores de desnivel para obtener rangos numéricos y categorizarlos en bajo, medio y alto.  
+
+  🏞️ Se generaron subcapas con simbología correspondiente y se elaboró un mapa final con leyenda, incluyendo núcleos urbanos y límites municipales.  
+
+  🔧 Proyecto realizado como ejercicio práctico en el Módulo 1 del curso de Especialista en QGIS.
 image: "@assets/docs/the-arcane/mage-schools/cover.jpg"
 imageAlt: "Painting of a woman summoning earthen hands on a battlefield"
+pubDate: 2024-07-15
+modDate: 2024-08-03
 ---

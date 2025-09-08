@@ -9,6 +9,4 @@ description: |
   El proyecto abre la puerta a futuras investigaciones sobre sostenibilidad, salud y condiciones laborales en el sector azucarero.  
 image: "@assets/docs/characters/backgrounds/juegos.png"
 imageAlt: "Painting of a hooded figure with light beaming out from his chest"
-pubDate: 2024-07-15
-modDate: 2024-08-03
 ---
