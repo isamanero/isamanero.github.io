@@ -21,7 +21,8 @@ const globalHideToc = false;
 const tocDepth = 3;
 
 const actuallyHideNav = hideNav || globalHideNav;
-const actuallyHideToc = hideToc || globalHideToc || headings.filter((heading) => heading.depth <= tocDepth).length === 0;
+const actuallyHideToc =
+  hideToc || globalHideToc || headings.filter((heading) => heading.depth <= tocDepth).length === 0;
 
 let articleClass = "";
 let navClass = "";
@@ -48,32 +49,35 @@ if (actuallyHideNav && actuallyHideToc) {
 
 <BaseLayout title={title} image={image?.src} description={description}>
   <section class="flex container p-4">
-    <div class=`max-h-static_sidemenu sticky top-[5rem] mr-4 ${navClass}`}>
-      <DocBrowser
-        menu={browserMenu}
-        currentPage={entry.id.replace("/-index", "")}
-      />
+    <!-- Sidebar / DocBrowser -->
+    <div class={`max-h-static_sidemenu sticky top-[5rem] mr-4 ${navClass}`}>
+      <DocBrowser menu={browserMenu} currentPage={entry.id.replace("/-index", "")} />
     </div>
-    <div class=`w-full ${articleClass}`}>
+
+    <!-- Main article -->
+    <div class={`w-full ${articleClass}`}>
       <article>
         <section>
-          <!-- EntryHeader como antes -->
-          <EntryHeader entry={entry} showImage />
-
-          <!-- Nueva sección de descripción tipo ingredientes -->
-          {description && (
-            <section class="glass mb-4 p-4 rounded-lg intersect:animate-fadeUp opacity-0">
-              <div set:html={markdownify(description)} class="text-lg text-gray-700" />
-            </section>
-          )}
+          <!-- EntryHeader: título + descripción en un solo recuadro -->
+          <EntryHeader entry={entry} showImage>
+            {description && (
+              <div
+                set:html={markdownify(description)}
+                class="prose prose-lg prose-gray dark:prose-invert text-left mb-4"
+              />
+            )}
+          </EntryHeader>
         </section>
 
+        <!-- Contenido principal -->
         <section class="content mb-4 glass px-4 rounded-lg">
           <Content />
         </section>
       </article>
     </div>
-    <div class=`max-h-static_sidemenu sticky top-[5rem] ml-4 ${tocClass}`}>
+
+    <!-- Table of Contents -->
+    <div class={`max-h-static_sidemenu sticky top-[5rem] ml-4 ${tocClass}`}>
       <TableOfContents headings={headings} tocDepth={tocDepth} />
     </div>
   </section>
