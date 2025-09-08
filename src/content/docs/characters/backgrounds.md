@@ -9,6 +9,4 @@ description: |
  Puedes ver más información en mi repositorio pinchando [aquí](https://github.com/isamanero/MyPortfolio/blob/main/Data_Analytics/Proyectos_acad%C3%A9micos/Juegos_clasicos.ipynb).
 image: "@assets/docs/characters/backgrounds/juegos.png"
 imageAlt: "Juegos clásicos con Python"
-pubDate: 2024-07-15
-modDate: 2024-08-03
 ---
