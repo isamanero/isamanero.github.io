@@ -20,6 +20,7 @@ import type { GenericEntry, EntryReference } from "@/types";
 
 interface EntryData {
   title: string;
+  description?: string;
   image?: string;
   imageAlt?: string;
   author?: EntryReference;
@@ -60,6 +61,7 @@ const {
 
 const {
   title,
+  description,
   author,
   categories,
   tags,
