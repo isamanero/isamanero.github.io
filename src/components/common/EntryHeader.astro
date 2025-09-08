@@ -70,49 +70,55 @@ tags?.sort((a: string, b: string) => a.localeCompare(b));
   )}
 </div>
 
+{showInfo && (
+  <div class="glass mb-8 p-6 rounded-lg intersect:animate-fade opacity-0 intersect-no-queue flex flex-col items-center text-center">
+    
+    <!-- Título centrado -->
+    <h1 set:html={markdownify(title)} class="text-3xl font-bold mb-4" />
 
-  {showInfo && (
-    <div class="glass mb-8 p-6 rounded-lg intersect:animate-fade opacity-0 intersect-no-queue flex flex-col items-center text-center">
-      
-      <!-- Título centrado -->
-      <h1 set:html={markdownify(title)} class="text-3xl font-bold mb-4" />
+    <!-- Descripción con soporte dark mode -->
+    {description && (
+      <p 
+        class="text-lg mb-6 text-gray-700 dark:text-gray-300"
+        set:html={markdownify(description)}
+      />
+    )}
 
-      <!-- Autor, categorías y tags centrados -->
-      <ul class="flex flex-wrap justify-center gap-2">
-        {author && showAuthor && (
-          <li class="inline-block">
-            <a href={`/authors/${slugify(author.id)}`} class="flex items-center gap-1">
-              <FaRegUserCircle class="inline-block" />
-              {upperHumanize(author.id)}
-            </a>
-          </li>
-        )}
+    <!-- Autor, categorías y tags centrados -->
+    <ul class="flex flex-wrap justify-center gap-2">
+      {author && showAuthor && (
+        <li class="inline-block">
+          <a href={`/authors/${slugify(author.id)}`} class="flex items-center gap-1">
+            <FaRegUserCircle class="inline-block" />
+            {upperHumanize(author.id)}
+          </a>
+        </li>
+      )}
 
-        {complexity && showReadingTime && (
-          <li class="inline-block flex items-center gap-1">
-            <FaRegClock class="inline-block" />
-            {complexity} min
-          </li>
-        )}
+      {complexity && showReadingTime && (
+        <li class="inline-block flex items-center gap-1">
+          <FaRegClock class="inline-block" />
+          {complexity} min
+        </li>
+      )}
 
-        {categories && showCategories && categories.map((cat) => (
-          <li class="inline-block flex items-center gap-1">
-            <a href={`/blog/categories/${slugify(cat)}`}>
-              <FaRegFolder class="inline-block" />
-              {upperHumanize(cat)}
-            </a>
-          </li>
-        ))}
+      {categories && showCategories && categories.map((cat) => (
+        <li class="inline-block flex items-center gap-1">
+          <a href={`/blog/categories/${slugify(cat)}`}>
+            <FaRegFolder class="inline-block" />
+            {upperHumanize(cat)}
+          </a>
+        </li>
+      ))}
 
-        {tags && showTags && tags.map((tag) => (
-          <li class="inline-block flex items-center gap-1">
-            <a href={`/blog/tags/${slugify(tag)}`}>
-              <FaHashtag class="inline-block" />
-              {lowerHumanize(tag)}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )}
-</div>
+      {tags && showTags && tags.map((tag) => (
+        <li class="inline-block flex items-center gap-1">
+          <a href={`/blog/tags/${slugify(tag)}`}>
+            <FaHashtag class="inline-block" />
+            {lowerHumanize(tag)}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
