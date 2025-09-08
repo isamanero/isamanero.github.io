@@ -2,6 +2,10 @@
 import BaseLayout from "@components/base/BaseLayout.astro";
 import DocCard from "@components/docs/Card.astro";
 import type { DocsEntry } from "@/types";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 
 interface Props {
   collectionIndex: DocsEntry;
@@ -14,14 +18,23 @@ const { entries } = Astro.props;
 <BaseLayout>
   <section class="section">
     <div class="container">
-      <!-- Carrusel con scroll -->
-      <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide">
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        spaceBetween={20}
+        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 },
+        }}
+      >
         {entries.map((entry) => (
-          <div class="min-w-[80%] sm:min-w-[50%] md:min-w-[33%] lg:min-w-[25%] snap-center">
+          <SwiperSlide>
             <DocCard entry={entry} />
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   </section>
 </BaseLayout>
