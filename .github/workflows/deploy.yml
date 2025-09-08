@@ -14,17 +14,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1. Clonar el repositorio
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies and build site
+      # 2. Configurar Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Instalar dependencias con caching
+      - name: Install dependencies
+        run: npm install
+        env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
+
+      # 4. Construir el sitio Astro
+      - name: Build site
         uses: withastro/action@v3
         env:
-          NODE_OPTIONS: "--max-old-space-size=4096" # Aumenta memoria de Node a 4GB
-        # with (opcional):
-        #   path: .
-        #   node-version: 20
-        #   package-manager: pnpm@latest
+          NODE_OPTIONS: "--max-old-space-size=8192"
+          # Puedes agregar otras variables de entorno si las necesitas
+        with:
+          node-version: 20
+          package-manager: npm
 
   deploy:
     needs: build
