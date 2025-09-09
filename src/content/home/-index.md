@@ -2,6 +2,7 @@
 title: ¡Hola! Mi nombre es Isabel 🙋🏻‍♀️
 image: "@assets/docs/the-arcane/mage-schools/portada_pp.jpeg"
 content: |
+
  Bienvenidos/as a mi web de proyectos. Aquí encontrarás una selección de mis trabajos y desarrollos más recientes.
  
 
