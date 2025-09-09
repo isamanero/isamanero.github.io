@@ -7,6 +7,7 @@ import {
   FaHashtag,
   FaRegClock,
 } from "react-icons/fa";
+import { FiLink } from "react-icons/fi";
 import type { GenericEntry, EntryReference } from "@/types";
 
 interface EntryData {
@@ -75,20 +76,37 @@ tags?.sort((a: string, b: string) => a.localeCompare(b));
 
 {showInfo && (
   <div class="glass mb-8 p-6 rounded-lg intersect:animate-fade opacity-0 intersect-no-queue flex flex-col items-center">
-    
-    <!-- Título centrado -->
-    <h1 set:html={markdownify(title)} class="text-3xl font-bold mb-4 text-center" />
 
-    <!-- Descripción alineada a la izquierda -->
+    <!-- Título centrado en negro -->
+    <h1 set:html={markdownify(title)} class="text-3xl font-bold mb-4 text-black text-center" />
+
     {description && (
-      <div 
-        class="prose prose-lg prose-gray dark:prose-invert mb-6 text-left max-w-none"
-        set:html={markdownify(description)}
-      />
+      <>
+        <!-- Recuadro destacado para el enlace del proyecto -->
+        <div class="bg-blue-50 border border-blue-300 rounded-lg px-4 py-2 mb-6 inline-flex items-center gap-2 hover:bg-blue-100 transition">
+  <FiLink class="w-5 h-5 text-blue-600" />
+  <a 
+    href={description.split('\n\n')[0].replace(/\[.*\]\((.*)\)/, '$1')} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="text-blue-600 font-medium hover:underline"
+  >
+    Enlace proyecto
+  </a>
+</div>
+</div>
+
+        <!-- Resto de la descripción -->
+        <div
+          class="prose prose-lg prose-gray dark:prose-invert text-left max-w-none"
+        >
+          {markdownify(description.split('\n\n').slice(1).join('\n\n'))}
+        </div>
+      </>
     )}
 
     <!-- Autor, categorías y tags centrados -->
-    <ul class="flex flex-wrap justify-center gap-2">
+    <ul class="flex flex-wrap justify-center gap-2 mt-6">
       {author && showAuthor && (
         <li class="inline-block">
           <a href={`/authors/${slugify(author.id)}`} class="flex items-center gap-1">
