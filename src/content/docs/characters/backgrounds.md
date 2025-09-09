@@ -12,7 +12,7 @@ description: |
 
   Queremos añadir mejoras como interfaz gráfica, base de datos y modo online.
 
-  Ha sido un gran aprendizaje colaborativo en programación y diseño de juegos.<br>
+  Ha sido un gran aprendizaje colaborativo en programación y diseño de juegos
 
 
 
