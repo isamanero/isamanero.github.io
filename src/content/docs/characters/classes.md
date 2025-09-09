@@ -16,6 +16,7 @@ description: |
 
   Autoras: Sara, Sandra, Ana, Nuria y yo.
 
+
   👉 [Enlace presentación 💻](https://drive.google.com/file/d/1_g_sOfUDmTmKAAa1MWVxXXj1OKRiXZa5/view?usp=drive_link)
 
 image: "@assets/docs/characters/backgrounds/covid.png"

@@ -16,7 +16,7 @@ interface EntryData {
   image?: any;
   imageAlt?: string;
   author?: EntryReference;
-  categories?: string[];
+  categories?: string[]; 
   tags?: string[];
   complexity?: number;
 }
@@ -84,24 +84,22 @@ tags?.sort((a: string, b: string) => a.localeCompare(b));
       <>
         <!-- Recuadro destacado para el enlace del proyecto -->
         <div class="bg-blue-50 border border-blue-300 rounded-lg px-4 py-2 mb-6 inline-flex items-center gap-2 hover:bg-blue-100 transition">
-  <FiLink class="w-5 h-5 text-blue-600" />
-  <a 
-    href={description.split('\n\n')[0].replace(/\[.*\]\((.*)\)/, '$1')} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    class="text-blue-600 font-medium hover:underline"
-  >
-    Enlace proyecto
-  </a>
-</div>
-</div>
+          <FiLink class="w-5 h-5 text-blue-600" />
+          <a 
+            href={description.split('\n\n')[0].replace(/\[.*\]\((.*)\)/, '$1')} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-blue-600 font-medium hover:underline"
+          >
+            Enlace proyecto
+          </a>
+        </div>
 
-        <!-- Resto de la descripción -->
+        <!-- Resto de la descripción renderizada como HTML -->
         <div
           class="prose prose-lg prose-gray dark:prose-invert text-left max-w-none"
-        >
-          {markdownify(description.split('\n\n').slice(1).join('\n\n'))}
-        </div>
+          set:html={markdownify(description.split('\n\n').slice(1).join('\n\n'))}
+        />
       </>
     )}
 
