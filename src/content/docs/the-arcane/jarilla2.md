@@ -1,7 +1,7 @@
 ---
 title: "Incendio de Jarilla 2025: Cálculo del dNBR y Mapas Temáticos con Sentinel-2"
 description: |
-  [🔗Enlace proyecto](https://github.com/isamanero/MyPortfolio/blob/main/QGIS/Impacto_incendio_Jarilla.pdf)
+  [🔗Enlace proyecto](https://github.com/isamanero/MyPortfolio/blob/main/QGIS/Informe_Jarilla_Sentinel.pdf)
 
   Este proyecto es la continuación del análisis exploratorio del incendio forestal de Jarilla, utilizando ahora imágenes Sentinel-2 obtenidas desde Copernicus Browser para calcular el NBR y el dNBR con QGIS y el Semi-Automatic Classification Plugin.
 

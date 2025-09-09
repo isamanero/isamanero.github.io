@@ -1,7 +1,7 @@
 ---
 title: "Primer Proyecto: Análisis de Itinerarios por Desnivel"
 description: |
-  [🔗Enlace proyecto](https://github.com/isamanero/MyPortfolio/blob/main/Data_Analytics/Proyectos_acad%C3%A9micos/Juegos_clasicos.ipynb)
+  [🔗Enlace proyecto](https://github.com/isamanero/MyPortfolio/blob/main/QGIS/ProyectoQGIS_Modulo1.pdf)
 
   Este proyecto se centró en la capa itinerarios.shp, transformando los valores de desnivel para obtener rangos numéricos y categorizarlos en bajo, medio y alto.
 
