@@ -18,7 +18,7 @@ content: |
 
 
 
- 
+
  Para ver todos mis proyectos directamente en GitHub, haz clic en el siguiente enlace:💻
 button:
   label: Mi portfolio en GitHub
