@@ -1,5 +1,5 @@
 ---
-title: Isabel Mañero
+title: Isabel Mañero Domínguez
 description: Descripción sobre mi, un poco la trayectoria y acceso a mi CV
 image: "@assets/profile/Yo_home.jpg"
 button:
