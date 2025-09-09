@@ -41,8 +41,8 @@ const { image, imageAlt, title, content, button } = entry.data;
             <p class="mb-4">{parrafo}</p>
           ))}
 
-          {button && (
-            <div class="mt-6 text-center lg:text-left">
+          <div class="mt-6 text-center lg:text-left flex flex-col gap-4">
+            {button && (
               <Button
                 label={button.label}
                 link={button.link}
@@ -50,8 +50,17 @@ const { image, imageAlt, title, content, button } = entry.data;
                 hoverInvert
                 color=""
               />
-            </div>
-          )}
+            )}
+            <!-- Nuevo botón que apunta a /about/ -->
+            <Button
+              label="Sobre mí"
+              link="https://isamanero.github.io/about/"
+              newtab
+              hoverInvert
+              color=""
+            />
+          </div>
+
         </div>
 
       </div>
