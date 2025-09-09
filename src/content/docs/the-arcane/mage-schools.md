@@ -1,5 +1,5 @@
 ---
-title: "Primer proyecto curso GIS"
+title: "Analaisis nieves proyecto curso GIS"
 description: |
   En este ejercicio se trabajó con las capas del proyecto, centrándose en "itinerarios.shp".
   El objetivo fue categorizar los itinerarios según el desnivel.

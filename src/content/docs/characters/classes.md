@@ -1,5 +1,6 @@
 ---
 title: Evolución de la música durante la pandemia 2020
+order: 2
 description: |
   Proyecto de Brave Data en colaboración con la Fundación Armonía Social para analizar la evolución de la música durante la pandemia.  
   Se recopilaron datos de Spotify y LastFM (2019-2024), procesados con Pandas y almacenados en MySQL para facilitar el análisis.  

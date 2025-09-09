@@ -1,5 +1,6 @@
 ---
 title: Dulce Paradoja (con Tableau)
+order: 4
 description: |
   Este es mi primer proyecto en Tableau realizado en pareja en Adalab, junto a mi compañera Amanda.  
   Analizamos el impacto del cambio climático en la agricultura, con un enfoque en la producción y consumo de azúcar en India.  
@@ -7,6 +8,6 @@ description: |
   Descubrimos un bajo nivel de emisiones de CO₂ asociadas a la producción, a pesar de la alta extensión cultivada.  
   En Tableau desarrollamos visualizaciones sobre producción, consumo, importaciones y emisiones de CO₂.  
   El proyecto abre la puerta a futuras investigaciones sobre sostenibilidad, salud y condiciones laborales en el sector azucarero.  
-image: "@assets/docs/characters/backgrounds/juegos.png"
+image: "@assets/docs/characters/backgrounds/tableau.png"
 imageAlt: "Painting of a hooded figure with light beaming out from his chest"
 ---

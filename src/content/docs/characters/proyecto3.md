@@ -1,5 +1,6 @@
 ---
 title: Bienestar y Retención del Talento en ABC Corporation
+order: 3
 description: |
   Durante el módulo 3 de Adalab, mis compañeras Andrea Gauger, María Guisado, Adriana Arcidiacono y yo (Isa Mañero) desarrollamos este proyecto en Letal Insight Company a petición de ABC Corporation.  
   El objetivo fue analizar el bienestar laboral y descubrir qué factores influyen en la satisfacción y retención del personal.  

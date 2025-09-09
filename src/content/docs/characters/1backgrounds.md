@@ -1,5 +1,6 @@
 ---
 title: Juegos clásicos con Python
+order: 1
 description: |
   [🔗Enlace proyecto](https://github.com/isamanero/MyPortfolio/blob/main/Data_Analytics/Proyectos_acad%C3%A9micos/Juegos_clasicos.ipynb)
 
