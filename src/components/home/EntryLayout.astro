@@ -18,19 +18,20 @@ const { image, imageAlt, title, content, button } = entry.data;
     <div class="container mx-auto">
       <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
 
-        <!-- Imagen a la izquierda -->
-        {image && (
-          <div class="flex-shrink-0">
-            <Image
-              class="rounded-lg w-64 lg:w-96"
-              src={image}
-              alt={imageAlt}
-              width={1024}
-              height={1024}
-              loading="eager"
-            />
-          </div>
-        )}
+      {/* Imagen a la izquierda */}
+{image && (
+  <div class="flex-shrink-0 w-[80px] lg:w-[512px]">
+    <Image
+      class="rounded-lg"
+      src={image}
+      alt={imageAlt}
+      width={1024}
+      height={1024}
+      loading="eager"
+    />
+  </div>
+)}
+
 
         <!-- Texto a la derecha con fondo translúcido -->
         <div class="backdrop-blur-md rounded-lg p-8 text-left max-w-lg" style="background-color: rgba(255,255,255,0.2);">
