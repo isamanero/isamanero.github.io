@@ -14,6 +14,11 @@ content: |
  - 🗺️GIS: Incendio de Jarilla 2025: Cálculo del dNBR y Mapas Temáticos con Sentinel-2
  ______________________________________________
 
+ Versión móvil: en el icono superior [≡] acceso al menú.
+
+
+
+ 
  Para ver todos mis proyectos directamente en GitHub, haz clic en el siguiente enlace:💻
 button:
   label: Mi portfolio en GitHub
