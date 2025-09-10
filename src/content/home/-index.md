@@ -1,5 +1,5 @@
 ---
-title: ¡Hola! Mi nombre es Isabel 🙋🏻‍♀️
+title: ¡Hola! Mi nombre es Isabel 👩🏻‍💻
 image: "@assets/docs/the-arcane/mage-schools/portada_pp.jpeg"
 content: |
 
