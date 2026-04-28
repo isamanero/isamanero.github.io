@@ -78,7 +78,7 @@ La banda 10 corresponde a la región del <strong>infrarrojo térmico (TIR)</stro
 <p>Se ha aplicado una escala de colores intuitiva, clasificando los valores desde muy baja a muy alta temperatura. En este caso, al tratarse de un entorno rural con baja cobertura arbórea, se observa una <strong>isla de calor urbana negativa</strong>, diferenciándose del comportamiento típico de zonas urbanas densas.</p>
 
 <p><strong>Procesado de datos</strong><br>
-Primero se seleccionó la imagen satelital desde EarthExplorer (USGS), descargando la banda 10 junto con el archivo <strong>.MTL</strong>, que contiene los parámetros necesarios para el procesamiento térmico.</p>
+Primero se seleccionó la imagen satelital desde EarthExplorer (USGS), descargando la banda 10 junto con el archivo <strong>.txt</strong>,es el archivo que termina normalmente en MTL,que contiene los parámetros necesarios para el procesamiento térmico.</p>
 
 <p>Posteriormente, en QGIS se utilizó la calculadora raster para convertir los valores a grados Celsius empleando los coeficientes del archivo de documentación:</p>
 
